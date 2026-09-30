@@ -94,6 +94,9 @@ The dashboard includes:
 - Average Daily Steps by Activity Level
 - Daily Steps vs Calories Burned
 - Key behavioural insights and summary findings
+### Dashboard Preview
+
+![Bellabeat Power BI Dashboard](images/bellabeat_dashboard.png)
 
 ## Analysis Workflow
 
@@ -157,3 +160,4 @@ bellabeat-wellness-analysis/
 4. Open the notebooks in the `notebooks/` folder in numerical order.
 5. Run the notebooks from top to bottom.
 6. Open `Bellabeat_Wellness_Analysis.pbix` from the `powerbi/` folder to view the Power BI dashboard.
+
