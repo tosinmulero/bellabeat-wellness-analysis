@@ -1,163 +1,166 @@
-# Bellabeat Smart Device Usage & Wellness Behaviour Analysis
+<p align="center">
+  <img src="images/readme/hero.svg" alt="Bellabeat Wellness Analysis" width="100%">
+</p>
 
-## Project Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square" alt="Python">
+  <img src="https://img.shields.io/badge/pandas-150458?style=flat-square" alt="pandas">
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square" alt="Matplotlib">
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square" alt="Power BI">
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square" alt="Jupyter">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square" alt="GitHub">
+</p>
 
-This project analyses Fitbit smart-device data to identify trends in users' physical activity, sedentary behaviour, sleep patterns, and calorie expenditure.
+<p align="center"><b>Python • pandas • Power BI • Behavioural Analytics • Wellness Data</b></p>
 
-The analysis was completed as a Bellabeat case study using the Google Data Analytics framework:
+A Google Data Analytics case study examining Fitbit activity and sleep behaviour to identify product, engagement and wellness-marketing insights. The workflow follows **Ask → Prepare → Process → Analyze → Share → Act**.
 
-**Ask → Prepare → Process → Analyze → Share → Act**
+> **Scope:** this is a behavioural analytics project, not a clinical study. Findings are observational and based on a limited Fitbit sample.
 
-The objective is to translate smart-device usage patterns into practical insights that could support Bellabeat's wellness products and marketing strategy.
+---
 
-## Business Task
+## 🎯 Executive Snapshot
 
-Bellabeat wants to better understand how consumers use smart fitness devices and how behavioural trends could inform its product and marketing strategy.
+| KPI | Result |
+| --- | ---: |
+| Main analysis window | **12 Apr–12 May 2016** |
+| Average daily steps | **7,801** |
+| Average sedentary minutes | **1,083** |
+| Average sleep duration | **419 min (~7 h)** |
+| Average sleep efficiency | **91.65%** |
+| Steps vs calories correlation | **r ≈ 0.58** |
+| Valid activity users with ≥14 days | **29** |
 
-The analysis focuses on three business questions:
+---
 
-1. What are some trends in smart device usage?
-2. How could these trends apply to Bellabeat customers?
-3. How could these trends help influence Bellabeat's marketing strategy?
+## 🧩 Business Problem
 
-The analysis uses Fitbit activity and sleep data to explore patterns in daily steps, active minutes, sedentary behaviour, calorie expenditure, and sleep duration.
+Bellabeat wants to understand how consumers use smart fitness devices and how behavioural patterns could inform product and marketing strategy.
 
-## Tools & Technologies
+The project asks:
 
-- **Python** — data cleaning, transformation, validation, exploratory analysis, and correlation analysis
-- **Pandas** — data manipulation and aggregation
-- **Matplotlib** — exploratory visualisation
-- **Power BI** — interactive dashboard development and presentation of insights
-- **Jupyter Notebook** — documenting the analytical workflow
-- **Git & GitHub** — version control and project portfolio hosting
+1. What activity patterns are visible across the week?
+2. How much time do users spend sedentary?
+3. How do activity and calorie expenditure relate?
+4. What sleep patterns are visible?
+5. How could users be segmented for more relevant engagement?
+6. Which findings are suitable for action, and which require caution?
 
-## Data Source
+---
 
-The analysis uses the Fitbit Fitness Tracker dataset provided for the Bellabeat case study.
+## 🏗️ Analytical Architecture
 
-For the main analysis, the project uses data covering:
+```mermaid
+flowchart LR
+    A["Fitbit activity + sleep files"] --> B["Python preparation"]
+    B --> C["Cleaning + validation"]
+    C --> D["Behavioural analysis"]
+    D --> E["Correlation + segmentation"]
+    E --> F["Power BI reporting"]
+    F --> G["Wellness recommendations"]
+```
 
-**12 April 2016 – 12 May 2016**
+Full design: [`docs/TECHNICAL_ARCHITECTURE.md`](docs/TECHNICAL_ARCHITECTURE.md)
 
-The primary datasets used were:
+---
 
-- `dailyActivity_merged.csv` — daily steps, distance, active minutes, sedentary minutes, and calories
-- `sleepDay_merged.csv` — daily sleep duration and time spent in bed
-
-The dataset contains anonymised smart-device records from Fitbit users and is used to identify behavioural patterns rather than make clinical or population-wide conclusions.
-
-## Data Limitations
-
-Several limitations should be considered when interpreting the results:
-
-- The dataset includes a relatively small number of Fitbit users.
-- Participation and device usage were not consistent across all users and days.
-- Some daily activity records contained incomplete tracking periods.
-- Sleep data was available for fewer users than activity data.
-- The dataset represents a limited time period and should not be treated as representative of the wider population.
-- Relationships identified in the analysis are observational and should not be interpreted as causal.
-
-## Key Findings
-
-- Average daily steps across valid activity days were approximately **7,801 steps**.
-- **Tuesday** recorded the highest average daily steps at approximately **8,257 steps**, while **Sunday** recorded the lowest at approximately **6,627 steps**.
-- Users spent a large proportion of the day sedentary, averaging approximately **1,083 sedentary minutes** on valid activity days.
-- Daily steps and calories burned showed a **moderate positive correlation of approximately 0.58**.
-- Average sleep duration was approximately **419 minutes per night**, equivalent to about **7 hours**.
-- Sunday recorded the highest average sleep duration, while Thursday recorded the lowest.
-- Higher-activity user groups recorded more daily steps and very active minutes, while lower-activity groups recorded more sedentary time.
-- Sleep duration showed little linear relationship with next-day steps, sedentary minutes, or calories in this dataset.
-
-## Recommendations
-
-Based on the behavioural patterns observed in the dataset, Bellabeat could consider the following actions:
-
-- Use personalised activity reminders to encourage users to increase movement on lower-activity days, particularly Sundays.
-- Introduce sedentary-time alerts or movement prompts to help users reduce prolonged inactivity.
-- Use activity-level segmentation to tailor wellness messages for low-, moderate-, and high-activity users.
-- Highlight the relationship between movement and calorie expenditure in user-facing insights and educational content.
-- Use weekday-specific messaging to encourage more consistent activity patterns throughout the week.
-- Treat sleep duration as one component of overall wellness rather than assuming it directly predicts next-day activity.
-
-## Power BI Dashboard
-
-An interactive Power BI dashboard was created to communicate the main findings from the analysis.
-
-The dashboard includes:
-
-- Average Daily Steps
-- Average Calories Burned
-- Average Sleep Minutes
-- Average Sleep Efficiency
-- Average Daily Steps by Day of Week
-- Average Sleep Minutes by Day of Week
-- Average Daily Steps by Activity Level
-- Daily Steps vs Calories Burned
-- Key behavioural insights and summary findings
-### Dashboard Preview
+## 📊 Dashboard
 
 ![Bellabeat Power BI Dashboard](images/bellabeat_dashboard.png)
 
-## Analysis Workflow
+---
 
-The project followed the Google Data Analytics case study framework:
+## 🔎 Key Findings
 
-### Ask
-Defined the business task, stakeholders, and analytical questions.
+- Average activity across valid days was approximately **7,801 steps**.
+- Users averaged approximately **1,083 sedentary minutes** per valid day.
+- **Tuesday** recorded the highest average daily steps at roughly **8,257**, while **Sunday** was lowest at roughly **6,627**.
+- Daily steps and calories burned showed a **moderate positive correlation (~0.58)**.
+- Average sleep was approximately **419 minutes**, equivalent to about seven hours.
+- Sleep duration showed little linear relationship with next-day steps, sedentary minutes or calories in this sample.
 
-### Prepare
-Reviewed the Fitbit datasets, assessed data structure, coverage, limitations, and data quality.
+---
 
-### Process
-Cleaned the activity and sleep datasets using Python and Pandas, including:
-- date conversion
-- duplicate removal
-- validation of missing values
-- checking invalid or incomplete records
-- creation of cleaned analytical datasets
+## 💼 Business Recommendations
 
-### Analyze
-Performed exploratory and behavioural analysis covering:
-- daily activity patterns
-- weekday activity trends
-- activity-level segmentation
-- sleep duration and sleep efficiency
-- relationships between steps, calories, sedentary time, and sleep
-- next-day sleep/activity relationships
+- Use personalised activity prompts on lower-activity days.
+- Introduce sedentary-time reminders to reduce prolonged inactivity.
+- Segment user messaging by activity level rather than applying one generic wellness message.
+- Highlight the relationship between movement and calorie expenditure in educational content.
+- Treat sleep as one component of overall wellness rather than assuming direct next-day effects.
 
-### Share
-Created a Power BI dashboard to communicate KPIs, behavioural trends, and key insights.
+---
 
-### Act
-Developed practical recommendations for Bellabeat based on the observed activity and sleep patterns.
+## 🧠 Analytical Engineering
 
-## Project Structure
+The project demonstrates:
+
+- data-quality review across activity and sleep files;
+- date normalisation and duplicate removal;
+- incomplete-record validation;
+- user-level coverage checks;
+- weekday behavioural analysis;
+- activity-level segmentation;
+- sleep-efficiency calculation;
+- correlation analysis;
+- Power BI communication of behavioural KPIs.
+
+---
+
+## 🧰 Technology Stack
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square" alt="Python">
+  <img src="https://img.shields.io/badge/pandas-150458?style=flat-square" alt="pandas">
+  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=flat-square" alt="Matplotlib">
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square" alt="Power BI">
+  <img src="https://img.shields.io/badge/Jupyter-F37626?style=flat-square" alt="Jupyter">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square" alt="Git">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square" alt="GitHub">
+</p>
+
+**Python · pandas · Matplotlib · Power BI · Jupyter Notebook · Git · GitHub · VS Code**
+
+---
+
+## ✅ Quality & Reproducibility
+
+The repository includes an automated **Portfolio Quality** workflow validating the project structure, dashboard asset and notebook JSON integrity.
+
+---
+
+## ⚖️ Methodology & Limitations
+
+- The sample contains a relatively small number of Fitbit users.
+- Tracking completeness varies by user and day.
+- Sleep data is available for fewer records than activity data.
+- The analysis window is short and should not be treated as representative of the wider population.
+- Correlations are observational and should not be interpreted as causal or clinical.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 bellabeat-wellness-analysis/
-│
+├── .github/workflows/portfolio-quality.yml
 ├── data/
-│   ├── raw/
-│   └── processed/
-│
+├── docs/
+├── images/
+│   ├── readme/hero.svg
+│   └── bellabeat_dashboard.png
 ├── notebooks/
 │   ├── 01_ask_business_task.ipynb
 │   ├── 02_prepare_data.ipynb
 │   ├── 03_process_data.ipynb
 │   └── 04_analyze_data.ipynb
-│
 ├── powerbi/
-│   ├── Bellabeat_Wellness_Analysis.pbix
-│   └── data/
-│
 └── README.md
+```
 
-## How to Run the Project
+---
 
-1. Clone or download this repository.
-2. Open the project folder in VS Code.
-3. Install the required Python libraries, including Pandas and Matplotlib.
-4. Open the notebooks in the `notebooks/` folder in numerical order.
-5. Run the notebooks from top to bottom.
-6. Open `Bellabeat_Wellness_Analysis.pbix` from the `powerbi/` folder to view the Power BI dashboard.
+## 👨🏾‍💻 Author
 
+**Oluwatosin Oluwaseun Mulero**  
+**Data Analyst | Data Scientist | Business Intelligence**
