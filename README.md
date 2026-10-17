@@ -19,6 +19,12 @@ A Google Data Analytics case study examining Fitbit activity and sleep behaviour
 
 ---
 
+## Recruiter quick review
+
+**[Read the dedicated portfolio case study](https://tosinmulero.github.io/data-analytics-portfolio/case-studies/bellabeat-wellness-analysis.html)** · **[Open the evidence guide](docs/RECRUITER_GUIDE.md)** · [View a project visual](images/bellabeat_dashboard.png)
+
+The evidence guide links the business question, documented results, methodology and source artefacts without relying on unverified claims.
+
 ## 🎯 Executive Snapshot
 
 | KPI | Result |
